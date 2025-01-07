@@ -332,3 +332,532 @@ padding: 0px 20px 40px 70px;
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Modalni yashirish va ko'rsatish uchun kerakli uslublar */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Modalni boshlang'ich holatda yashirish */
+#sales-modal {
+    display: none; /* Modalni yashirish */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Orqa fonni qora qilish */
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    z-index: 1000; /* Modalni ekranda ustun qilish */
+  }
+  
+  /* Modal ichidagi tarkibni shakllantirish */
+  #sales-modal form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #sales-modal input,
+  #sales-modal select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Modalni yopish tugmasi */
+  #sales-modal button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #sales-modal button:hover {
+    background-color: #45a049;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Modal uchun umumiy stil */
+#sales-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Yumuq fon */
+    display: none; /* Dastlab yashirin */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Modalning boshqa elementlardan ustun bo'lishi uchun */
+  }
+  
+  /* Modal o'zagi */
+  #sales-modal form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Modalni yopish tugmasi */
+  #sales-modal button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Modalni yopish tugmasi hover holati */
+  #sales-modal button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modalning yopish tugmasi (modalni yopish uchun) */
+  #sales-modal button[type="button"] {
+    background-color: #f44336;
+  }
+  
+  #sales-modal button[type="button"]:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Label va input uchun stil */
+  #sales-modal label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  #sales-modal input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  /* Mahsulot nomi uchun stil */
+  #sales-modal p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+/* Content Section Styling */
+.data-table {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.data-table form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.data-table form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.data-table form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.data-table form button {
+    align-self: flex-start;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ 
+ul li:last-child {
+    border-bottom: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+table tbody tr td {
+    transition: background-color 0.3s ease;
+}
+
+table tbody tr td:hover {
+    background-color: #e8f4e8;
+}
+
+/* Modal Styling */
+#sales-modal,
+#edit-delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+#sales-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#sales-modal input,
+#edit-delete-modal button {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+#sales-modal button,
+#edit-delete-modal button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#sales-modal button:hover,
+#edit-delete-modal button:hover {
+    background-color: #45a049;
+}
+
+#edit-delete-modal p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .data-table form {
+        margin-bottom: 20px;
+    }
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+/* Animation on Button Hover */
+button {
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Input Focus Animation */
+input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h2 {
+    color: #555;
+    font-size: 1.2em;
+}
+
+.stat p {
+    font-size: 2em;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+ 
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .box {
+    width: 23%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .box ion-icon {
+    font-size: 30px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .chart {
+    height: 100px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .chart-bar {
+    width: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+  }
+  
+  .number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .icons-box{
+    display: flex;
+    padding: 20px 10px;
+    gap: 10px;
+  }
+
+
+  

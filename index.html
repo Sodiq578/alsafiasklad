@@ -1,168 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./qoshimcha.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Admin Dashboard</title>
-</head>
+    <title>Alsafia Sklad</title>
+  </head>
 
-<body>
-    
+  <body>
     <nav>
-        <div class="logo">
-            <div class="logo-image">
-                <img src="logo.png" alt="">
-            </div>
+      <div class="logo">
+        <div class="logo-image">
+          <h1>Sklad</h1>
         </div>
-        <div class="menu-items">
-            <ul class="navLinks">
-                <li class="navList active">
-                    <a href="#">
-                        <ion-icon name="home-outline"></ion-icon>
-                        <span class="links">Dashboard</span>
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#">
-                        <ion-icon name="folder-outline"></ion-icon>
-                        <span class="links">Content</span>
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#">
-                        <ion-icon name="analytics-outline"></ion-icon>
-                        <span class="links">Analytics</span>
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#">
-                        <ion-icon name="heart-outline"></ion-icon>
-                        <span class="links">Likes</span>
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                        <span class="links">Comments</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="bottom-link">
-                <li>
-                    <a href="#">
-                        <ion-icon name="person-circle-outline"></ion-icon>
-                        <span class="links">Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                        <span class="links">Logout</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+      </div>
+      <div class="menu-items">
+        <!-- Foydalanuvchi ma'lumoti -->
+       
+
+
+       
+        <!-- Yuqori menyu -->
+        <ul class="navLinks">
+          <li class="navList active">
+            <a href="#">
+              <ion-icon name="home-outline"></ion-icon>
+              <span class="links">Asosiy qism</span>
+            </a>
+          </li>
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="analytics-outline"></ion-icon>
+              <span class="links">Analitika</span>
+            </a>
+          </li>
+      
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="cart-outline"></ion-icon>
+              <span class="links">Sotuvlar</span>
+            </a>
+          </li>
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="folder-outline"></ion-icon>
+              <span class="links">Maxsulot qo'shish</span>
+            </a>
+          </li>
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="cube-outline"></ion-icon>
+              <span class="links">Zahira</span>
+            </a>
+          </li>
+        </ul>
+        
+        <!-- Quyidagi menyu -->
+        <ul class="bottom-link">
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="settings-outline"></ion-icon>
+              <span class="links">Sozlamalar</span>
+            </a>
+          </li>
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="help-circle-outline"></ion-icon>
+              <span class="links">Yordam</span>
+            </a>
+          </li>
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="person-circle-outline"></ion-icon>
+              <span class="links">Profile</span>
+            </a>
+          </li>
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="log-out-outline"></ion-icon>
+              <span class="links">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
     </nav>
 
     <section class="dashboard">
-        <div class="container">
-            <div class="overview">
-                <div class="title">
-                    <ion-icon name="speedometer"></ion-icon>
-                    <span class="text">Dashboard</span>
-                </div>
-                <div class="boxes">
-                    <div class="box box1">
-                        <ion-icon name="eye-outline"></ion-icon>
-                        <span class="text">Total Views</span>
-                        <span class="number">18345</span>
-                    </div>
-                    <div class="box box2">
-                        <ion-icon name="people-outline"></ion-icon>
-                        <span class="text">Active users</span>
-                        <span class="number">2745</span>
-                    </div>
-                    <div class="box box3">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                        <span class="text">Total Activities</span>
-                        <span class="number">1209</span>
-                    </div>
-                    <div class="box box4">
-                        <ion-icon name="car-sport-outline"></ion-icon>
-                        <span class="text">Insured Vehicles</span>
-                        <span class="number">123</span>
-                    </div>
-                </div> 
+      <div class="container">
+        <div class="overview">
+          <div class="title">
+            <ion-icon name="speedometer"></ion-icon>
+            <span class="text"></span>
+
+            <div class="search-container">
+                <input type="text"  class="search-input"  id="search-bar" placeholder="Mahsulotlarni qidiring" oninput="searchProducts()" />
+
+                <button class="search-btn">Qidirish</button>
             </div>
             
 
-            <!-- Recent Activities -->
-            <div class="data-table activityTable">
-                <div class="title">
-                    <ion-icon name="time-outline"></ion-icon>
-                    <span class="text">Recent Activities</span>
-                </div>
-                <div>
-                    <!-- Enter any table or section here -->
-                </div>
-            </div>
 
             
-            <!-- Content -->
-            <div style="display:none" class="data-table userDetailsTable">
-                <div class="title">
-                    <ion-icon name="folder-outline"></ion-icon>
-                    <span class="text">Content</span>
-                </div>
-                <div>
-                    <!-- Enter any table or section here -->
-                </div>
+            <div>
+                <div id="sold-sum"></div>
+                <div id="exchange-rate"></div>
+                <div id="weather"></div>
+                <div id="current-time"></div>
+                 
+              </div>
+
+              <div class="clock-container">
+                 
+                <div id="txt" class="clock-time"></div>
+              </div>
+
+              <div class="xisoblash">
+                <h2 id="total-sum">Maxsulotlar summasi: 0</h2>
+           
+              </div>
+              
+          </div>
+        </div>
+
+        <!-- Content Section for Products -->
+        <div class="data-table userDetailsTable">
+          <div class="title">
+            <ion-icon name="folder-outline"></ion-icon>
+            <span class="text">Content</span>
+          </div>
+          <div>
+            <div>
+              <h3>Mahsulotlar Ro'yxati</h3>
+              <ul id="product-list"></ul>
             </div>
 
-            <!-- Analytics -->
-            <div style="display:none" class="data-table EditUserRole">
-                <div class="title">
-                    <ion-icon name="analytics-outline"></ion-icon>
-                    <span class="text">Analytics</span>
-                </div>
-                <div>
-                    <!-- Enter any table or section here -->
-                </div>
-            </div>
+            <h3>Izlangan Mahsulotlar</h3>
+            <table id="tracked-products-list">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Rasm</th>
+                  <th>Jami Miqdor</th>
+                  <th>Sotilgan Miqdor</th>
+                  <th>Qolgan Miqdor</th>
+                  <th>Mahsulot Narxi (so'm)</th>
+                  <th>Umumiy Summa (so'm)</th>
+                  <th>Qo'shilgan Sana</th>
+                  <th>Amallar</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
 
-            <!--  Likes -->
-            <div style="display:none" class="data-table VehicleDetails">
-                <div class="title">
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <span class="text">Vehicles</span>
-                </div>
-                <div>
-                    <!-- Enter any table or section here -->
-                </div>
-            </div>
+      
+        <!-- Edit/Delete Modal -->
+        <div id="edit-delete-modal" style="display: none">
+          <p id="confirmation-message"></p>
+          <button type="button" onclick="confirmDelete()">Ha, o'chirish</button>
+          <button type="button" onclick="closeEditDeleteModal()">Yopish</button>
+        </div>
 
-            <!-- Downloads section -->
-            <div style="display:none" class="data-table downloads">
-                <div class="title">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                    <span class="text">Comments</span>
+        <!-- Other Sections -->
+        <div class="data-table EditUserRole" style="display: none">
+          <div class="title">
+            <ion-icon name="analytics-outline"></ion-icon>
+            <span class="text">Analytics</span>
+          </div>
+          <div class="boxes">
+            <div class="box box1">
+                <ion-icon name="eye-outline"></ion-icon>
+                <span class="text">Jammi maxsulotlar</span>
+                <div class="chart">
+                    <div class="chart-bar" id="total-products-bar" style="background-color: rgb(255, 99, 132);"></div>
                 </div>
-                <div>
-                    <!-- Enter any table or section here -->
+                <span class="number" id="total-products">0</span>
+            </div>
+            <div class="box box2">
+                <ion-icon name="people-outline"></ion-icon>
+                <span class="text">Shu yillik sotuvlar</span>
+                <div class="chart">
+                    <div class="chart-bar" id="yearly-sales-bar" style="background-color: rgb(54, 162, 235);"></div>
                 </div>
+                <span class="number" id="yearly-sales">0</span>
+            </div>
+            <div class="box box3">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <span class="text">Xaftalik sotuvlar</span>
+                <div class="chart">
+                    <div class="chart-bar" id="weekly-sales-bar" style="background-color: rgb(255, 205, 86);"></div>
+                </div>
+                <span class="number" id="weekly-sales">0</span>
+            </div>
+            <div class="box box4">
+                <ion-icon name="car-sport-outline"></ion-icon>
+                <span class="text">Kunlik sotuvlar</span>
+                <div class="chart">
+                    <div class="chart-bar" id="daily-sales-bar" style="background-color: rgb(153, 102, 255);"></div>
+                </div>
+                <span class="number" id="daily-sales">0</span>
             </div>
         </div>
+        
+        <canvas id="salesChart" width="400" height="200"></canvas>
+        
+        </div>
+
+        <div class="data-table VehicleDetails" style="display: none">
+          <div class="title">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="text">Sotuvlar tarixi</span>
+          </div>
+        </div>
+
+        <div class="data-table downloads" style="display: none">
+          <div class="title">
+            <ion-icon name="folder-outline"></ion-icon>
+            <span class="text">Maxsulot qo'shish</span>
+          </div>
+
+          <form id="product-form">
+            <label for="product-name">Mahsulot Nomi:</label>
+            <input type="text" id="product-name" required />
+
+            <label for="product-image">Mahsulot Rasmi:</label>
+            <input type="file" id="product-image" accept="image/*" required />
+
+            <label for="product-quantity">Jami Miqdor:</label>
+            <input type="number" id="product-quantity" required />
+
+            <label for="product-price">Mahsulot Narxi (so'mda):</label>
+            <input type="number" id="product-price" required />
+
+            <button type="submit">Mahsulotni Qo'shish</button>
+          </form>
+        </div>
+      </div>
     </section>
 
     <script src="index.js"></script>
-    
-    <!-- Sources for icons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
-</body>
 
+    <!-- Sources for icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./chart.js"></script>
+
+
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+    
+        const salesChart = new Chart(ctx, {
+            type: 'bar', // Yoki 'line', 'pie'
+            data: {
+                labels: ['Kunlik', 'Xaftalik', 'Yillik', 'Jammi'], // Ma'lumot toifalari
+                datasets: [{
+                    label: 'Sotuv statistikasi',
+                    data: [120, 350, 2400, 8900], // Sotuvlar ma'lumotlari
+                    backgroundColor: [
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 205, 86)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 99, 132)'
+                    ],
+                    borderColor: [
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 205, 86)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 99, 132)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
+
+  </body>
 </html>
