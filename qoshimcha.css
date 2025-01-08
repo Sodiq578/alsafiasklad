@@ -71,6 +71,96 @@
 
 
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal button {
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+/* Formani ushlab turish */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Xodimlar ro'yxati */
+.employee-list {
+  margin-top: 20px;
+}
+
+.employee-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.employee-list li {
+  margin: 5px 0;
+}
+
+.employee-list button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #ff6347;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.employee-list button:hover {
+  background-color: #d9534f;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

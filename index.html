@@ -48,6 +48,15 @@
               <span class="links">Sotuvlar</span>
             </a>
           </li>
+
+          <li class="navList">
+            <a href="#">
+              <ion-icon name="people-outline"></ion-icon> <!-- Xodimlar uchun ikonka -->
+              <span class="links">xodimlar</span>
+            </a>
+          </li>
+          
+
           <li class="navList">
             <a href="#">
               <ion-icon name="folder-outline"></ion-icon>
@@ -222,6 +231,102 @@
           </div>
         </div>
 
+
+
+        <div class="data-table VehicleDetails">
+          <div class="title">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="text">Ishlayotkan xodimlar</span>
+          </div>
+        
+          <table id="employeeTable">
+            <thead>
+              <tr>
+                <th>Ismi</th>
+                <th>Familyasi</th>
+                <th>Lavozimi</th>
+                <th>Ish boshlagan vaqti</th>
+                <th>Telefon raqami</th>
+                <th>Tug'ilgan kuni</th>
+                <th>Ota-onasining ismi</th>
+                <th>Oylik turi</th>
+                <th>Sharh</th>
+                <th>Harakatlar</th>
+              </tr>
+            </thead>
+            <tbody id="employeeData">
+              <!-- Xodimlar ma'lumotlari bu yerga qo'shiladi -->
+            </tbody>
+          </table>
+        
+          <button onclick="showEmployeeForm()">Xodim qo'shish</button>
+        
+          <!-- Xodim qo'shish modal formasi -->
+          <div id="employeeFormModal" class="modal">
+            <div class="modal-content">
+              <h3 class="modal-title">Yangi xodim ma'lumotlarini kiriting</h3>
+              <form id="employeeForm">
+                <div class="form-group">
+                  <label for="firstName">Ism:</label>
+                  <input type="text" id="firstName" class="input-field" placeholder="Ismni kiriting" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Familiya:</label>
+                  <input type="text" id="lastName" class="input-field" placeholder="Familiyani kiriting" />
+                </div>
+                <div class="form-group">
+                  <label for="position">Lavozim:</label>
+                  <input type="text" id="position" class="input-field" placeholder="Lavozimni kiriting" />
+                </div>
+                <div class="form-group">
+                  <label for="startDate">Ish boshlagan sana:</label>
+                  <input type="date" id="startDate" class="input-field" />
+                </div>
+                <div class="form-group">
+                  <label for="phoneNumber">Telefon:</label>
+                  <input type="tel" id="phoneNumber" class="input-field" placeholder="Telefon raqam" />
+                </div>
+                <div class="form-group">
+                  <label for="birthDate">Tug'ilgan sana:</label>
+                  <input type="date" id="birthDate" class="input-field" />
+                </div>
+                <div class="form-group">
+                  <label for="parentsName">Ota-onasining ismi:</label>
+                  <input type="text" id="parentsName" class="input-field" placeholder="Ota-onasining ismi" />
+                </div>
+                <div class="form-group">
+                  <label for="salaryType">Oylik turi:</label>
+                  <select id="salaryType" class="input-select">
+                    <option value="stabil">Stabil</option>
+                    <option value="foiz">Foiz</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="comments">Sharh:</label>
+                  <input type="text" id="comments" class="input-field" placeholder="Sharh kiriting" />
+                </div>
+                <div class="button-group">
+                  <button type="button" class="btn add-btn" onclick="addEmployee()">Qo'shish</button>
+                  <button type="button" class="btn cancel-btn" onclick="closeModal()">Bekor qilish</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        
+          <!-- O'chirishni tasdiqlash modal formasi -->
+          <div id="confirmDeleteModal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <h3>Rostan ham bu xodim ishdan ketdimi?</h3>
+              <button id="confirmDeleteButton">Ha</button>
+              <button onclick="closeModal()">Yo'q</button>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
         <div class="data-table downloads" style="display: none">
           <div class="title">
             <ion-icon name="folder-outline"></ion-icon>
@@ -297,6 +402,139 @@
                 }
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let employees = [];
+let employeeToDelete = null;
+
+function showEmployeeForm() {
+  document.getElementById("employeeFormModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("employeeFormModal").style.display = "none";
+  document.getElementById("confirmDeleteModal").style.display = "none";
+}
+
+function addEmployee() {
+  let firstName = document.getElementById("firstName").value;
+  let lastName = document.getElementById("lastName").value;
+  let position = document.getElementById("position").value;
+  let startDate = document.getElementById("startDate").value;
+  let phoneNumber = document.getElementById("phoneNumber").value;
+  let birthDate = document.getElementById("birthDate").value;
+  let parentsName = document.getElementById("parentsName").value;
+  let salaryType = document.getElementById("salaryType").value;
+  let comments = document.getElementById("comments").value;
+
+  let newEmployee = {
+    firstName,
+    lastName,
+    position,
+    startDate,
+    phoneNumber,
+    birthDate,
+    parentsName,
+    salaryType,
+    comments,
+  };
+
+  employees.push(newEmployee);
+  displayEmployees();
+  closeModal();
+  alert("Xodim qo'shildi!");
+}
+
+function displayEmployees() {
+  let tableBody = document.getElementById("employeeData");
+  tableBody.innerHTML = "";
+
+  employees.forEach((employee, index) => {
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${employee.firstName}</td>
+      <td>${employee.lastName}</td>
+      <td>${employee.position}</td>
+      <td>${employee.startDate}</td>
+      <td>${employee.phoneNumber}</td>
+      <td>${employee.birthDate}</td>
+      <td>${employee.parentsName}</td>
+      <td>${employee.salaryType}</td>
+      <td>${employee.comments}</td>
+      <td>
+        <button onclick="editEmployee(${index})">Tahrirlash</button>
+        <button onclick="confirmDelete(${index})">O'chirish</button>
+      </td>
+    `;
+
+    tableBody.appendChild(row);
+  });
+}
+
+function confirmDelete(index) {
+  employeeToDelete = index;
+  document.getElementById("confirmDeleteModal").style.display = "block";
+  document.getElementById("confirmDeleteButton").onclick = () => {
+    deleteEmployee();
+  };
+}
+
+function deleteEmployee() {
+  employees.splice(employeeToDelete, 1);
+  displayEmployees();
+  closeModal();
+  alert("Xodim o'chirildi!");
+}
+
+function editEmployee(index) {
+  let employee = employees[index];
+  document.getElementById("firstName").value = employee.firstName;
+  document.getElementById("lastName").value = employee.lastName;
+  document.getElementById("position").value = employee.position;
+  document.getElementById("startDate").value = employee.startDate;
+  document.getElementById("phoneNumber").value = employee.phoneNumber;
+  document.getElementById("birthDate").value = employee.birthDate;
+  document.getElementById("parentsName").value = employee.parentsName;
+  document.getElementById("salaryType").value = employee.salaryType;
+  document.getElementById("comments").value = employee.comments;
+
+  employees.splice(index, 1);
+  showEmployeeForm();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 
@@ -305,6 +543,23 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
 
-
+<script>
+  
+</script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

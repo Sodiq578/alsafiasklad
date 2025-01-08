@@ -93,7 +93,7 @@ function displayProducts() {
       <td>${(product.quantity - product.sold) * product.price} so'm</td>
       <td>2025-01-04</td>
       <td class="icons-box">
-        <button onclick="openModal(${index})"><i class="fas fa-cart-plus"></i></button>
+        <button class="sotilganlar"><i class="fas fa-cart-plus"></i></button>
         <button onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>
         <button onclick="openDeleteModal(${index})"><i class="fas fa-trash-alt"></i></button>
       </td>
@@ -110,7 +110,9 @@ function displayProducts() {
 }
 
 // Sotuvlar oynasini ochish
-function openModal(index) {
+
+
+function openModalSale(index) {
   const product = products[index];
   document.getElementById('sales-modal').style.display = 'flex'; // Modalni ko'rsatish
 
@@ -127,6 +129,7 @@ function openModal(index) {
     document.getElementById('total-price-modal').value = totalPrice;
   });
 
+  // Sotish oynasining "submit" hodisasi
   document.getElementById('sales-form').onsubmit = function (event) {
     event.preventDefault();
 
@@ -146,6 +149,39 @@ function openModal(index) {
     }
   };
 }
+
+// Modalni yopish funksiyasi
+function closeModal() {
+  document.getElementById('sales-modal').style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Mahsulotni tahrirlash uchun modalni ochish
 function openEditModal(index) {
@@ -303,3 +339,33 @@ document.getElementById('login-form').addEventListener('submit', function (event
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function openModal() {
+  document.getElementById('employeeFormModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('employeeFormModal').style.display = 'none';
+}
+
+function addEmployee() {
+  alert('Xodim qo\'shildi!');
+  closeModal();
+}
