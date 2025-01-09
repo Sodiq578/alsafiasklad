@@ -113,7 +113,7 @@ function displayProducts() {
       <td>${remainingQuantity}</td>
       <td>${Number(product.price).toLocaleString()} so'm</td>
       <td>${totalPrice.toLocaleString()} so'm</td>
-      <td>2025-01-04</td>
+      
       <td class="icons-box">
         <button onclick="openModal(${index})"><i class="fas fa-cart-plus"></i></button>
         <button onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>
@@ -418,7 +418,7 @@ document.getElementById('download-excel').addEventListener('click', function () 
       remainingQuantity,
       Number(product.price).toLocaleString(),
       totalPrice.toLocaleString(),
-      '2025-01-04' // Har bir mahsulot uchun sanani qo'shishingiz mumkin
+       // Har bir mahsulot uchun sanani qo'shishingiz mumkin
     ]);
   });
 
@@ -516,7 +516,7 @@ function displayProducts() {
       <td>${remainingQuantity}</td>
       <td>${Number(product.price).toLocaleString()} so'm</td>
       <td>${totalPrice.toLocaleString()} so'm</td>
-      <td>2025-01-04</td>
+  
       <td class="icons-box">
         <button onclick="openModal(${index})"><i class="fas fa-cart-plus"></i></button>
         <button onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>

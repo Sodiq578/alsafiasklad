@@ -236,6 +236,22 @@ padding: 0px 20px 40px 70px;
 }
 
 
+thead tr th{
+    min-width: 100px;
+    padding: 10px;
+}
+
+
+
+  td{
+    min-width: 100px;
+
+    max-width: 200px !important;
+    padding: 0 10px;
+}
+
+
+
 /* Add user */
 .addUser {
     font-family: Helvetica, Arial, sans-serif;
