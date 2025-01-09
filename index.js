@@ -26,6 +26,22 @@ document.querySelectorAll(".navList").forEach(function(element) {
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Mahsulotlarni localStorage'dan olish yoki bo'sh massivni boshlash
 const products = JSON.parse(localStorage.getItem('products')) || [];
 
@@ -93,7 +109,7 @@ function displayProducts() {
       <td>${(product.quantity - product.sold) * product.price} so'm</td>
       <td>2025-01-04</td>
       <td class="icons-box">
-        <button class="sotilganlar"><i class="fas fa-cart-plus"></i></button>
+        <button onclick="openModal(${index})"><i class="fas fa-cart-plus"></i></button>
         <button onclick="openEditModal(${index})"><i class="fas fa-edit"></i></button>
         <button onclick="openDeleteModal(${index})"><i class="fas fa-trash-alt"></i></button>
       </td>
@@ -110,9 +126,7 @@ function displayProducts() {
 }
 
 // Sotuvlar oynasini ochish
-
-
-function openModalSale(index) {
+function openModal(index) {
   const product = products[index];
   document.getElementById('sales-modal').style.display = 'flex'; // Modalni ko'rsatish
 
@@ -129,7 +143,6 @@ function openModalSale(index) {
     document.getElementById('total-price-modal').value = totalPrice;
   });
 
-  // Sotish oynasining "submit" hodisasi
   document.getElementById('sales-form').onsubmit = function (event) {
     event.preventDefault();
 
@@ -149,39 +162,6 @@ function openModalSale(index) {
     }
   };
 }
-
-// Modalni yopish funksiyasi
-function closeModal() {
-  document.getElementById('sales-modal').style.display = 'none';
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Mahsulotni tahrirlash uchun modalni ochish
 function openEditModal(index) {
@@ -232,6 +212,13 @@ function closeEditDeleteModal() {
 // Mahsulotlarni boshida ko'rsatish
 displayProducts();
 
+
+
+
+
+
+
+
 // Mahsulotlarni qidirish
 function searchProducts() {
   const query = document.getElementById('search-bar').value.toLowerCase();
@@ -246,58 +233,16 @@ function searchProducts() {
     }
   });
 }
+ 
 
-// Dollar kursini olish
-async function fetchDollarExchangeRate() {
-  try {
-    const response = await fetch('https://v6.exchangerate-api.com/v6/0b13a9bfaa3548ffb8c8aa8d77d26b06/latest/USD');
-    const data = await response.json();
-    return data.conversion_rates.UZS; // USD dan UZS ga kurs
-  } catch (error) {
-    console.error('Dollar kursini olishda xatolik:', error);
-    return null;
-  }
-}
 
-// Ob-havo ma'lumotlarini olish
-async function fetchWeather() {
-  try {
-    const apiKey = 'YOUR_API_KEY';  // O'z API kalitingizni kiriting
-    const city = 'Tashkent';
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-    const data = await response.json();
-    const temperature = data.main.temp;
-    const weatherDescription = data.weather[0].description;
-    return `${city}: ${temperature}°C, ${weatherDescription}`;
-  } catch (error) {
-    console.error('Ob-havo ma\'lumotlarini olishda xatolik:', error);
-    return 'Ob-havo ma\'lumotlarini olishda xatolik.';
-  }
-}
 
-// Joriy vaqtni olish
-function getCurrentTime() {
-  const currentTime = new Date();
-  let hours = currentTime.getHours().toString().padStart(2, '0');
-  let minutes = currentTime.getMinutes().toString().padStart(2, '0');
-  let seconds = currentTime.getSeconds().toString().padStart(2, '0');
-  return `${hours}:${minutes}:${seconds}`;
-}
 
-// Footer bo'limidagi barcha ma'lumotlarni yangilash
-async function updateFooter() {
-  const dollarRate = await fetchDollarExchangeRate();
-  const weather = await fetchWeather();
-  const time = getCurrentTime();
 
-  document.getElementById('dollar-rate').textContent = dollarRate ? `Dollar: ${dollarRate}` : 'Dollar kursini olishda xatolik';
-  document.getElementById('weather').textContent = weather;
-  document.getElementById('time').textContent = time;
+ 
+                                    
 
-  setTimeout(updateFooter, 1000);  // Har bir soniyada yangilash
-}
-
-updateFooter();  // Footerni yangilashni boshlash
+ 
 
 
 
@@ -309,63 +254,3 @@ updateFooter();  // Footerni yangilashni boshlash
 
 
 
-const users = [
-  { username: 'Alibek', password: 'sodiq191929' },
-  { username: 'Dilfuza', password: 'ssx191929' },
-];
-
-
-
-
-function checkLogin() {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  const user = users.find(u => u.username === username && u.password === password);
-
-  if (user) {
-    // Tizimga muvaffaqiyatli kirish
-    document.querySelector('.user-info span').textContent = `Assalomu alaykum, ${user.username}!`;
-    document.getElementById('login-form').style.display = 'none'; // Kirish formasi yashirilsin
-  } else {
-    alert('Ism yoki parol xato!');
-  }
-}
-
-// Foydalanuvchini tizimga kirishini tekshirish
-document.getElementById('login-form').addEventListener('submit', function (event) {
-  event.preventDefault(); // Formani yuborishni oldini olish
-  checkLogin();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function openModal() {
-  document.getElementById('employeeFormModal').style.display = 'flex';
-}
-
-function closeModal() {
-  document.getElementById('employeeFormModal').style.display = 'none';
-}
-
-function addEmployee() {
-  alert('Xodim qo\'shildi!');
-  closeModal();
-}
