@@ -14,7 +14,7 @@
     <title>Alsafia Sklad</title>
   </head>
 
-  <body>
+  <body   onload="startTime()"></body>>
     <nav>
       <div class="logo">
         <div class="logo-image">
@@ -23,10 +23,7 @@
       </div>
       <div class="menu-items">
         <!-- Foydalanuvchi ma'lumoti -->
-       
 
-
-       
         <!-- Yuqori menyu -->
         <ul class="navLinks">
           <li class="navList active">
@@ -41,21 +38,21 @@
               <span class="links">Analitika</span>
             </a>
           </li>
-      
+
           <li class="navList">
             <a href="#">
-              <ion-icon name="cart-outline"></ion-icon>
-              <span class="links">Sotuvlar</span>
+              <ion-icon name="cube-outline"></ion-icon>
+              <span class="links">Zaxira</span>
             </a>
           </li>
 
           <li class="navList">
             <a href="#">
-              <ion-icon name="people-outline"></ion-icon> <!-- Xodimlar uchun ikonka -->
+              <ion-icon name="people-outline"></ion-icon>
+              <!-- Xodimlar uchun ikonka -->
               <span class="links">xodimlar</span>
             </a>
           </li>
-          
 
           <li class="navList">
             <a href="#">
@@ -63,70 +60,73 @@
               <span class="links">Maxsulot qo'shish</span>
             </a>
           </li>
+       
+
+
           <li class="navList">
             <a href="#">
-              <ion-icon name="cube-outline"></ion-icon>
-              <span class="links">Zahira</span>
+              <button id="download-excel" class="btn">Excel yuklab olish</button>
+
             </a>
           </li>
         </ul>
-        
+
         <!-- Quyidagi menyu -->
-      
       </div>
-      
     </nav>
 
     <section class="dashboard">
       <div class="container">
         <div class="overview">
           <div class="title">
-            <ion-icon name="speedometer"></ion-icon>
             <span class="text"></span>
 
             <div class="search-container">
-                <input type="text"  class="search-input"  id="search-bar" placeholder="Mahsulotlarni qidiring" oninput="searchProducts()" />
-
-               
+              <input
+                type="text"
+                class="search-input"
+                id="search-bar"
+                placeholder="Mahsulotlarni qidiring"
+                oninput="searchProducts()"
+              />
             </div>
-            
 
-
-            
-            <div>
-                <div id="sold-sum"></div>
-                <div id="exchange-rate"></div>
-                <div id="weather"></div>
-                <div id="current-time"></div>
-                 
-              </div>
-
-              <div class="clock-container">
-                 
-                <div id="txt" class="clock-time"></div>
-              </div>
-
-              <div class="xisoblash">
-                <h2 id="total-sum">Maxsulotlar summasi: 0</h2>
            
-              </div>
-              
+
           </div>
+
+          <div class="xisoblash">
+            <h2 class="total-sum">
+              Maxsulotlar summasi: <span id="total-sum">0</span>
+            </h2>
+          </div>
+          
+
+
+          
+            
+        
+
+          <div class="clock-container">
+            <div id="txt" class="clock-time"></div>
+          </div>
+
+          
         </div>
 
         <!-- Content Section for Products -->
         <div class="data-table userDetailsTable">
           <div class="title">
             <ion-icon name="folder-outline"></ion-icon>
-            <span class="text">Content</span>
+            <span class="text">Mahsulotlar Ro'yxati</span>
           </div>
           <div>
             <div>
-              <h3>Mahsulotlar Ro'yxati</h3>
+             
               <ul id="product-list"></ul>
             </div>
 
-            <h3>Izlangan Mahsulotlar</h3>
+          
             <table id="tracked-products-list">
               <thead>
                 <tr>
@@ -146,7 +146,6 @@
           </div>
         </div>
 
-      
         <!-- Edit/Delete Modal -->
         <div id="edit-delete-modal" style="display: none">
           <p id="confirmation-message"></p>
@@ -162,58 +161,76 @@
           </div>
           <div class="boxes">
             <div class="box box1">
-                <ion-icon name="eye-outline"></ion-icon>
-                <span class="text">Jammi maxsulotlar</span>
-                <div class="chart">
-                    <div class="chart-bar" id="total-products-bar" style="background-color: rgb(255, 99, 132);"></div>
-                </div>
-                <span class="number" id="total-products">0</span>
+              <ion-icon name="eye-outline"></ion-icon>
+              <span class="text">Jammi maxsulotlar</span>
+              <div class="chart">
+                <div
+                  class="chart-bar"
+                  id="total-products-bar"
+                  style="background-color: rgb(255, 99, 132)"
+                ></div>
+              </div>
+              <span class="number" id="total-products">0</span>
             </div>
             <div class="box box2">
-                <ion-icon name="people-outline"></ion-icon>
-                <span class="text">Shu yillik sotuvlar</span>
-                <div class="chart">
-                    <div class="chart-bar" id="yearly-sales-bar" style="background-color: rgb(54, 162, 235);"></div>
-                </div>
-                <span class="number" id="yearly-sales">0</span>
+              <ion-icon name="people-outline"></ion-icon>
+              <span class="text">Shu yillik sotuvlar</span>
+              <div class="chart">
+                <div
+                  class="chart-bar"
+                  id="yearly-sales-bar"
+                  style="background-color: rgb(54, 162, 235)"
+                ></div>
+              </div>
+              <span class="number" id="yearly-sales">0</span>
             </div>
             <div class="box box3">
-                <ion-icon name="chatbubbles-outline"></ion-icon>
-                <span class="text">Xaftalik sotuvlar</span>
-                <div class="chart">
-                    <div class="chart-bar" id="weekly-sales-bar" style="background-color: rgb(255, 205, 86);"></div>
-                </div>
-                <span class="number" id="weekly-sales">0</span>
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+              <span class="text">Xaftalik sotuvlar</span>
+              <div class="chart">
+                <div
+                  class="chart-bar"
+                  id="weekly-sales-bar"
+                  style="background-color: rgb(255, 205, 86)"
+                ></div>
+              </div>
+              <span class="number" id="weekly-sales">0</span>
             </div>
             <div class="box box4">
-                <ion-icon name="car-sport-outline"></ion-icon>
-                <span class="text">Kunlik sotuvlar</span>
-                <div class="chart">
-                    <div class="chart-bar" id="daily-sales-bar" style="background-color: rgb(153, 102, 255);"></div>
-                </div>
-                <span class="number" id="daily-sales">0</span>
+              <ion-icon name="car-sport-outline"></ion-icon>
+              <span class="text">Kunlik sotuvlar</span>
+              <div class="chart">
+                <div
+                  class="chart-bar"
+                  id="daily-sales-bar"
+                  style="background-color: rgb(153, 102, 255)"
+                ></div>
+              </div>
+              <span class="number" id="daily-sales">0</span>
             </div>
-        </div>
-        
-        <canvas id="salesChart" width="400" height="200"></canvas>
-        
+          </div>
+
+          <canvas id="salesChart" width="400" height="200"></canvas>
         </div>
 
         <div class="data-table VehicleDetails" style="display: none">
           <div class="title">
             <ion-icon name="heart-outline"></ion-icon>
-            <span class="text">Sotuvlar tarixi</span>
+         
+            
+          </div>
+
+          <div id="statistics-container" class="statistics">
+            <!-- Statistik ma'lumotlar shu yerda ko'rsatiladi -->
           </div>
         </div>
-
-
 
         <div class="data-table VehicleDetails">
           <div class="title">
             <ion-icon name="heart-outline"></ion-icon>
             <span class="text">Ishlayotkan xodimlar</span>
           </div>
-        
+
           <table id="employeeTable">
             <thead>
               <tr>
@@ -233,9 +250,9 @@
               <!-- Xodimlar ma'lumotlari bu yerga qo'shiladi -->
             </tbody>
           </table>
-        
+
           <button onclick="showEmployeeForm()">Xodim qo'shish</button>
-        
+
           <!-- Xodim qo'shish modal formasi -->
           <div id="employeeFormModal" class="modal">
             <div class="modal-content">
@@ -243,15 +260,30 @@
               <form id="employeeForm">
                 <div class="form-group">
                   <label for="firstName">Ism:</label>
-                  <input type="text" id="firstName" class="input-field" placeholder="Ismni kiriting" />
+                  <input
+                    type="text"
+                    id="firstName"
+                    class="input-field"
+                    placeholder="Ismni kiriting"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="lastName">Familiya:</label>
-                  <input type="text" id="lastName" class="input-field" placeholder="Familiyani kiriting" />
+                  <input
+                    type="text"
+                    id="lastName"
+                    class="input-field"
+                    placeholder="Familiyani kiriting"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="position">Lavozim:</label>
-                  <input type="text" id="position" class="input-field" placeholder="Lavozimni kiriting" />
+                  <input
+                    type="text"
+                    id="position"
+                    class="input-field"
+                    placeholder="Lavozimni kiriting"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="startDate">Ish boshlagan sana:</label>
@@ -259,7 +291,12 @@
                 </div>
                 <div class="form-group">
                   <label for="phoneNumber">Telefon:</label>
-                  <input type="tel" id="phoneNumber" class="input-field" placeholder="Telefon raqam" />
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    class="input-field"
+                    placeholder="Telefon raqam"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="birthDate">Tug'ilgan sana:</label>
@@ -267,7 +304,12 @@
                 </div>
                 <div class="form-group">
                   <label for="parentsName">Ota-onasining ismi:</label>
-                  <input type="text" id="parentsName" class="input-field" placeholder="Otasining ismi ,   Onasining ismi" />
+                  <input
+                    type="text"
+                    id="parentsName"
+                    class="input-field"
+                    placeholder="Otasining ismi ,   Onasining ismi"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="salaryType">Oylik turi:</label>
@@ -278,19 +320,35 @@
                 </div>
                 <div class="form-group">
                   <label for="comments">Sharh:</label>
-                  <input type="text" id="comments" class="input-field" placeholder="Sharh kiriting" />
+                  <input
+                    type="text"
+                    id="comments"
+                    class="input-field"
+                    placeholder="Sharh kiriting"
+                  />
                 </div>
                 <div class="button-group">
-                  <button type="button" class="btn add-btn" onclick="addEmployee()">Qo'shish</button>
-                  <button type="button" class="btn cancel-btn" onclick="closeModal()">Bekor qilish</button>
+                  <button
+                    type="button"
+                    class="btn add-btn"
+                    onclick="addEmployee()"
+                  >
+                    Qo'shish
+                  </button>
+                  <button
+                    type="button"
+                    class="btn cancel-btn"
+                    onclick="closeModal()"
+                  >
+                    Bekor qilish
+                  </button>
                 </div>
               </form>
             </div>
           </div>
-          
-        
+
           <!-- O'chirishni tasdiqlash modal formasi -->
-          <div id="confirmDeleteModal" class="modal" style="display: none;">
+          <div id="confirmDeleteModal" class="modal" style="display: none">
             <div class="modal-content">
               <h3>Rostan ham bu xodim ishdan ketdimi?</h3>
               <button id="confirmDeleteButton">Ha</button>
@@ -298,9 +356,6 @@
             </div>
           </div>
         </div>
-        
-        
-
 
         <div class="data-table downloads" style="display: none">
           <div class="title">
@@ -327,6 +382,25 @@
       </div>
     </section>
 
+    <!-- Sotuv modal oynasi -->
+    <!-- Sotuvlar Modal -->
+    <div id="sales-modal">
+      <div class="modal-content">
+        <h2 id="product-name-modal"></h2>
+        <form id="sales-form">
+          <label for="sold-quantity-modal">Miqdor:</label>
+          <input type="number" id="sold-quantity-modal" value="1" min="1" />
+          <br /><br />
+          <label for="total-price-modal">Jami Narx:</label>
+          <input type="text" id="total-price-modal" readonly />
+          <br /><br />
+          <button type="submit">Sotish</button>
+        </form>
+        <br />
+        <button class="close-btn">Yopish</button>
+      </div>
+    </div>
+
     <script src="index.js"></script>
 
     <!-- Sources for icons -->
@@ -342,111 +416,92 @@
 
     <script src="./chart.js"></script>
 
-
     <script>
-        const ctx = document.getElementById('salesChart').getContext('2d');
-    
-        const salesChart = new Chart(ctx, {
-            type: 'bar', // Yoki 'line', 'pie'
-            data: {
-                labels: ['Kunlik', 'Xaftalik', 'Yillik', 'Jammi'], // Ma'lumot toifalari
-                datasets: [{
-                    label: 'Sotuv statistikasi',
-                    data: [120, 350, 2400, 8900], // Sotuvlar ma'lumotlari
-                    backgroundColor: [
-                        'rgb(153, 102, 255)',
-                        'rgb(255, 205, 86)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 99, 132)'
-                    ],
-                    borderColor: [
-                        'rgb(153, 102, 255)',
-                        'rgb(255, 205, 86)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 99, 132)'
-                    ],
-                    borderWidth: 1
-                }]
+      const ctx = document.getElementById("salesChart").getContext("2d");
+
+      const salesChart = new Chart(ctx, {
+        type: "bar", // Yoki 'line', 'pie'
+        data: {
+          labels: ["Kunlik", "Xaftalik", "Yillik", "Jammi"], // Ma'lumot toifalari
+          datasets: [
+            {
+              label: "Sotuv statistikasi",
+              data: [120, 350, 2400, 8900], // Sotuvlar ma'lumotlari
+              backgroundColor: [
+                "rgb(153, 102, 255)",
+                "rgb(255, 205, 86)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 99, 132)",
+              ],
+              borderColor: [
+                "rgb(153, 102, 255)",
+                "rgb(255, 205, 86)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 99, 132)",
+              ],
+              borderWidth: 1,
             },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
 
+      let employees = [];
+      let employeeToDelete = null;
 
+      function showEmployeeForm() {
+        document.getElementById("employeeFormModal").style.display = "block";
+      }
 
+      function closeModal() {
+        document.getElementById("employeeFormModal").style.display = "none";
+        document.getElementById("confirmDeleteModal").style.display = "none";
+      }
 
+      function addEmployee() {
+        let firstName = document.getElementById("firstName").value;
+        let lastName = document.getElementById("lastName").value;
+        let position = document.getElementById("position").value;
+        let startDate = document.getElementById("startDate").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+        let birthDate = document.getElementById("birthDate").value;
+        let parentsName = document.getElementById("parentsName").value;
+        let salaryType = document.getElementById("salaryType").value;
+        let comments = document.getElementById("comments").value;
 
+        let newEmployee = {
+          firstName,
+          lastName,
+          position,
+          startDate,
+          phoneNumber,
+          birthDate,
+          parentsName,
+          salaryType,
+          comments,
+        };
 
+        employees.push(newEmployee);
+        displayEmployees();
+        closeModal();
+        alert("Xodim qo'shildi!");
+      }
 
+      function displayEmployees() {
+        let tableBody = document.getElementById("employeeData");
+        tableBody.innerHTML = "";
 
+        employees.forEach((employee, index) => {
+          let row = document.createElement("tr");
 
-
-
-
-
-
-
-
-
-
-
-
-
-        let employees = [];
-let employeeToDelete = null;
-
-function showEmployeeForm() {
-  document.getElementById("employeeFormModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("employeeFormModal").style.display = "none";
-  document.getElementById("confirmDeleteModal").style.display = "none";
-}
-
-function addEmployee() {
-  let firstName = document.getElementById("firstName").value;
-  let lastName = document.getElementById("lastName").value;
-  let position = document.getElementById("position").value;
-  let startDate = document.getElementById("startDate").value;
-  let phoneNumber = document.getElementById("phoneNumber").value;
-  let birthDate = document.getElementById("birthDate").value;
-  let parentsName = document.getElementById("parentsName").value;
-  let salaryType = document.getElementById("salaryType").value;
-  let comments = document.getElementById("comments").value;
-
-  let newEmployee = {
-    firstName,
-    lastName,
-    position,
-    startDate,
-    phoneNumber,
-    birthDate,
-    parentsName,
-    salaryType,
-    comments,
-  };
-
-  employees.push(newEmployee);
-  displayEmployees();
-  closeModal();
-  alert("Xodim qo'shildi!");
-}
-
-function displayEmployees() {
-  let tableBody = document.getElementById("employeeData");
-  tableBody.innerHTML = "";
-
-  employees.forEach((employee, index) => {
-    let row = document.createElement("tr");
-
-    row.innerHTML = `
+          row.innerHTML = `
       <td>${employee.firstName}</td>
       <td>${employee.lastName}</td>
       <td>${employee.position}</td>
@@ -462,79 +517,69 @@ function displayEmployees() {
       </td>
     `;
 
-    tableBody.appendChild(row);
-  });
-}
+          tableBody.appendChild(row);
+        });
+      }
 
-function confirmDelete(index) {
-  employeeToDelete = index;
-  document.getElementById("confirmDeleteModal").style.display = "block";
-  document.getElementById("confirmDeleteButton").onclick = () => {
-    deleteEmployee();
-  };
-}
+      function confirmDelete(index) {
+        employeeToDelete = index;
+        document.getElementById("confirmDeleteModal").style.display = "block";
+        document.getElementById("confirmDeleteButton").onclick = () => {
+          deleteEmployee();
+        };
+      }
 
-function deleteEmployee() {
-  employees.splice(employeeToDelete, 1);
-  displayEmployees();
-  closeModal();
-  alert("Xodim o'chirildi!");
-}
+      function deleteEmployee() {
+        employees.splice(employeeToDelete, 1);
+        displayEmployees();
+        closeModal();
+        alert("Xodim o'chirildi!");
+      }
 
-function editEmployee(index) {
-  let employee = employees[index];
-  document.getElementById("firstName").value = employee.firstName;
-  document.getElementById("lastName").value = employee.lastName;
-  document.getElementById("position").value = employee.position;
-  document.getElementById("startDate").value = employee.startDate;
-  document.getElementById("phoneNumber").value = employee.phoneNumber;
-  document.getElementById("birthDate").value = employee.birthDate;
-  document.getElementById("parentsName").value = employee.parentsName;
-  document.getElementById("salaryType").value = employee.salaryType;
-  document.getElementById("comments").value = employee.comments;
+      function editEmployee(index) {
+        let employee = employees[index];
+        document.getElementById("firstName").value = employee.firstName;
+        document.getElementById("lastName").value = employee.lastName;
+        document.getElementById("position").value = employee.position;
+        document.getElementById("startDate").value = employee.startDate;
+        document.getElementById("phoneNumber").value = employee.phoneNumber;
+        document.getElementById("birthDate").value = employee.birthDate;
+        document.getElementById("parentsName").value = employee.parentsName;
+        document.getElementById("salaryType").value = employee.salaryType;
+        document.getElementById("comments").value = employee.comments;
 
-  employees.splice(index, 1);
-  showEmployeeForm();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        employees.splice(index, 1);
+        showEmployeeForm();
+      }
     </script>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
 
-<script>
-  
+
+
+
+    <script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+
+    <script></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

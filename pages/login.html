@@ -101,43 +101,101 @@
         }
 
         /* Sound wave animation */
-      /* Sound wave animation */
-@keyframes soundWave {
-    0% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.7;
-    }
-    25% {
-        transform: scale(1.1) rotate(10deg);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.2) rotate(-10deg);
-        opacity: 0.8;
-    }
-    75% {
-        transform: scale(1.1) rotate(10deg);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.7;
-    }
-}
+        @keyframes soundWave {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.7;
+            }
+            25% {
+                transform: scale(1.1) rotate(10deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2) rotate(-10deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: scale(1.1) rotate(10deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.7;
+            }
+        }
 
-#soundWave {
-    display: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-    animation: soundWave 1.5s infinite;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+        #soundWave {
+            display: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+            animation: soundWave 1.5s infinite;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+
+            body {
+            background-image: url(https://raw.githubusercontent.com/CiurescuP/LogIn-Form/main/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 900px;
+        }
+
+            form {
+                 
+                padding: 15px;
+            background-color: rgba(255, 255, 255, 0.008);
+                margin-top: 200px;
+            }
+
+            form h3 {
+                font-size: 30px;
+            }
+
+            label {
+                font-size: 20px;
+            }
+
+            input {
+                padding: 8px 12px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            form {
+                width: 100%;
+                top: 40%;
+                transform: translate(-50%, -40%);
+            }
+
+            form h3 {
+                font-size: 25px;
+            }
+
+            label {
+                font-size: 18px;
+            }
+
+            input {
+                padding: 7px 10px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            
+        }
     </style>
 </head>
 <body>
@@ -233,8 +291,6 @@
                 if (user) {
                     alert(`Assalomu alaykum, ${username}! Kirish muvaffaqiyatli.`);
                     window.location.href = "../index.html";
-
-
                 } else {
                     alert("Ma'lumotlar noto'g'ri.");
                 }
